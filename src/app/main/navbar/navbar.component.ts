@@ -28,21 +28,21 @@ export class NavbarComponent implements OnInit {
     this.menuList.push({'label':'Ana Sayfa' , 'routerLink': '/dashboard'});
 
     //Kutuphane menusu
-    this.altMenuList.push({'label':'Kategori Ekle', 'routerLink':'/kategori' });
-    this.altMenuList.push({'label':'Kitap Ekle', 'routerLink':'/kitap' });
-    this.altMenuList.push({'label':'Envanter Listesi', 'routerLink':'/envanter' });
+    this.altMenuList.push({'label':'Kategori Ekle', 'routerLink':'/kutuphane/kategori' });
+    this.altMenuList.push({'label':'Kitap Ekle', 'routerLink':'/kutuphane/kitap' });
+    this.altMenuList.push({'label':'Envanter Listesi', 'routerLink':'/kutuphane/envanter' });
     this.menuList.push({'label':'Kütüphane', 'routerLink':'/kutuphane' , 'items':this.altMenuList});
     this.altMenuList=[];
 
     // ziyaretci islemleri menusu
-    this.altMenuList.push({'label':'Ödünç Alma', 'routerLink':'/odunc-alma' });
-    this.altMenuList.push({'label':'İade etme', 'routerLink':'/iade-etme' });
-    this.menuList.push({'label':'Ziyaretçi İşlemleri', 'routerLink':'/ziyaretci-islemleri' , 'items': this.altMenuList});
+    this.altMenuList.push({'label':'Ödünç Alma', 'routerLink':'/ziyaretciIslemleri/odunc-alma' });
+    this.altMenuList.push({'label':'İade etme', 'routerLink':'/ziyaretciIslemleri/iade-etme' });
+    this.menuList.push({'label':'Ziyaretçi İşlemleri', 'routerLink':'/ziyaretciIslemleri' , 'items': this.altMenuList});
     this.altMenuList=[];
 
     //ziyaretci menüsü
-    this.altMenuList.push({'label':'Detaylı Arama', 'routerLink':'/detayli-arama' });
-    this.altMenuList.push({'label':'Hesabım', 'routerLink':'/hesabim' });
+    this.altMenuList.push({'label':'Detaylı Arama', 'routerLink':'/ziyaretci/detayli-arama' });
+    this.altMenuList.push({'label':'Hesabım', 'routerLink':'/ziyaretci/hesabim' });
     this.menuList.push({'label':'Ziyaretçi', 'routerLink':'/ziyaretci' , 'items': this.altMenuList});
     this.altMenuList=[];
   }

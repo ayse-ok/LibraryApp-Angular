@@ -5,35 +5,42 @@ import { ProfileComponent } from './profile/profile.component';
 import { MainComponent } from './main.component';
 
 const routes: Routes = [
-  // {
-  //   path: 'dashboard',
-  //   component: MainComponent,// <= Page component registration,
-  //   data: { title: 'Ana Sayfa' },
-  //   children: [{
-  //     path: '',      
-  //     component: DashboardComponent
-  //   }]     
-  // },
   {
-    path:'profile',
-    component:ProfileComponent
+    path: '',
+    data: { title: 'Ana Sayfa' },
+    component: MainComponent // <= Page component registration
+  },
+  {
+    path: 'dashboard',
+    component: MainComponent,// <= Page component registration,
+    data: { title: 'Ana Sayfa' },
+    children: [{
+      path: '',      
+      component: DashboardComponent
+    }]     
+  },
+  {
+    path: 'profile',
+    component: MainComponent,// <= Page component registration,
+    data: { title: 'Profil' },
+    children: [{
+      path: '',      
+      component: ProfileComponent
+    }]     
   },
   {
     path: 'kutuphane',
     data: { title: 'Kütüphane' },
-    component: MainComponent,// <= Page component registration
     loadChildren: () => import('../kutuphane/kutuphane.module').then((m) => m.KutuphaneModule), 
   },
   {
     path: 'ziyaretci',
     data: { title: 'Ziyaretçi' },
-    component: MainComponent,// <= Page component registration
     loadChildren: () => import('../ziyaretci/ziyaretci.module').then((m) => m.ZiyaretciModule), 
   },
   {
-    path: 'ziyaretci-islemler',
-    data: { title: 'Ziyaretçi İşlemler' },
-    component: MainComponent,// <= Page component registration
+    path: 'ziyaretciIslemleri',
+    data: { title: 'Ziyaretçi İşlemler' },   
     loadChildren: () => import('../ziyaretci-islemler/ziyaretci-islemler.module').then((m) => m.ZiyaretciIslemlerModule), 
   }
 

@@ -7,8 +7,9 @@ import { HesabimComponent } from './hesabim/hesabim.component';
 
 const routes: Routes = [
   {
-    path: 'ziyaretci',
+    path: '',
     data: { title: 'Ziyaretçi' },
+    component: MainComponent,
     children: [
       {
         path: 'detayli-arama',
@@ -21,11 +22,6 @@ const routes: Routes = [
         component: HesabimComponent        
       },
     ]
-  },
-  {
-    path: '',
-    data: { title: 'Ana Sayfa' },
-    component: MainComponent // <= Page component registration
   },
 ];
 
