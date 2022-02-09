@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/primeng/resources/themes/saga-blue/theme.css";
+@import "assets/css/style.bundle.css";
+
+
+.p-menuitem-text{
+    font-family: Poppins,Helvetica,sans-serif !important;
+    font-size: 15px!important;
+}
+
+
+@media screen and (min-width: 960px) {
+    .p-menubar-root-list  {
+		padding-left: 50px!important;
+	}
+    .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon {
+        color: black;
+    }  
+    .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+        color: black;
+        font-family: Poppins,Helvetica,sans-serif !important;
+        font-size: 18px!important;
+        font-weight: 600!important;
+    }        
+}
+
+
+.p-menubar {
+    padding: 0.5rem;
+    background: none !important;
+    background-color:none !important;
+    border: none;
+}
+
+.p-breadcrumb {
+    background: none;
+    border: none;
+    padding: 1rem;
+    padding-left: 130px!important;
+   
+}
+
+.p-breadcrumb ul li .p-menuitem-link .p-menuitem-text, .p-breadcrumb ul li .p-menuitem-link .p-menuitem-icon , .p-breadcrumb ul li.p-breadcrumb-chevron{
+    color: black !important;
+    opacity: 75%;
+}
+
+.p-datatable-table{   
+    width: 100% !important;
+}
+
+.ln_solid {
+    border-top: 3px solid #1f4060;
+    color: #ffffff;
+    background-color: #ffffff;
+    height: 1px;
+    margin: 20px 0;
+}

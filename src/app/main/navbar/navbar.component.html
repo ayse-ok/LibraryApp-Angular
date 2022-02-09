@@ -1,0 +1,28 @@
+<p-menubar #mainMenu [model]="menuList">
+    <ng-template pTemplate="start">
+        <img src="assets/logos/library-logo2.png" height="60px" class="p-mr-5" id="logo">
+    </ng-template>               
+    <ng-template pTemplate="end">  
+        <div class="d-flex align-items-center ms-1 ms-lg-3">
+            <!--begin::Menu wrapper-->
+            <div class="btn btn-icon btn-active-secondary w-50px h-50px w-md-50px h-md-50px">
+                <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+                <span class="svg-icon svg-icon-1" routerLink="/dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="2" y="2" width="10" height="10" rx="2" fill="black" />
+                        <rect opacity="0.7" x="13" y="2" width="10" height="10" rx="2" fill="black" />
+                        <rect opacity="0.7" x="13" y="13" width="10" height="10" rx="2" fill="black" />
+                        <rect opacity="0.7" x="2" y="13" width="10" height="10" rx="2" fill="black" />
+                    </svg>
+                </span>
+                <!--end::Svg Icon-->
+            </div>
+                                    
+            <!--begin::Menu wrapper-->
+            <div class="btn btn-icon btn-active-light-primary w-50px h-50px w-md-50px h-md-50px">
+                <img (click)="menu.toggle($event)" class="h-50px w-50px rounded" src="assets/logos/profile_menu.png" alt="Profil" />
+             </div>
+             <p-menu #menu [popup]="true" [model]="profilMenuItems"></p-menu>
+        </div>               
+</ng-template>               
+</p-menubar>                 
