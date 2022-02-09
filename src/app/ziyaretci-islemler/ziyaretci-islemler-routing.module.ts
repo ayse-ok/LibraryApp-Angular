@@ -7,8 +7,9 @@ import { OduncAlmaComponent } from './odunc-alma/odunc-alma.component';
 
 const routes: Routes = [
   {
-    path: 'ziyaretci-islemler',
+    path: '',
     data: { title: 'Ziyaretçi İşlemler' },
+    component: MainComponent,
     children: [
       {
         path: 'iade-etme',
@@ -21,11 +22,6 @@ const routes: Routes = [
         component: OduncAlmaComponent        
       },
     ]
-  },
-  {
-    path: '',
-    data: { title: 'Ana Sayfa' },
-    component: MainComponent // <= Page component registration
   },
 ];
 @NgModule({

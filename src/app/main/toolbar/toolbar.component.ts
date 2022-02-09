@@ -22,7 +22,7 @@ export class ToolbarComponent implements OnInit {
     this.router.events
     .pipe(filter(event => event instanceof NavigationEnd))
     .subscribe(() => this.items = this.createBreadcrumbs(this.activatedRoute.root));
-    this.home = {icon: 'pi pi-home', routerLink: '/library' };
+    this.home = {icon: 'pi pi-home', routerLink: '/dashboard' };
   }
 
   private createBreadcrumbs(route: ActivatedRoute, url: string = '', items: MenuItem[] = []): any{

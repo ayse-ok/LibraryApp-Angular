@@ -8,26 +8,11 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule)
   },
-  // {
-  //   path: 'library',
-  //   loadChildren: () => import('./main/main.module').then((m) => m.MainModule)
-  // },
   {
     path: '',
     loadChildren: () => import('./main/main.module').then((m) => m.MainModule)
   },
 
-  {
-    path: '',
-    component: MainComponent,// <= Page component registration,
-    data: { title: 'Ana Sayfa' },
-    children: [{
-      path: 'library',      
-      component: MainComponent
-    }]     
-  },
-  
- 
 ];
 
 @NgModule({
