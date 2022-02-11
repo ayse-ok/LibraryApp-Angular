@@ -15,6 +15,7 @@ import { KutuphaneModule } from '../kutuphane/kutuphane.module';
 import { SharedModule } from '../shared/shared.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
+import { AuthModule } from '@auth/auth.module';
 
 
 @NgModule({

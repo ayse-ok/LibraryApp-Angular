@@ -1,1 +1,65 @@
-<p>login works!</p>
+<body id="kt_body" class="bg-body">
+    <div class="d-flex flex-root">
+        <!--begin::Authentication - Sign-in -->
+        <div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom  position-x-center bgi-no-repeat bgi-size-contain "
+            style="background-image: url(assets/images/login-background3.png); background-position: center; background-size:contain">
+            <!--begin::Content-->
+            <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+                <!--begin::Logo-->
+                <a href="#" class="mb-15 mt-10">
+                    <img alt="Logo" src="assets/logos/library-logo2.png" class="h-100px" />
+                </a>
+                <!--end::Logo-->
+
+                <div class="w-lg-350px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+                    <!--begin::Heading-->
+                    <div class="mb-5 text-center">                        
+                        <h1 class="text-dark mb-3">Kütüphane Otomasyonu</h1>                        
+                    </div>
+                    <!--end::Heading-->
+
+                    <app-alert *ngIf="error" [message]="error" (close)="closeDialog($event)"></app-alert>
+
+                    <form *ngIf="!loading" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" required email ngModel name="email" id="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" required minlength="4" ngModel name="password" id="password"
+                                class="form-control">
+                        </div>
+
+                        <!--begin::Separator-->
+                        <div class="d-flex align-items-center mb-10 mt-10">
+                            <div class="border-bottom border-gray-300 mw-50 w-100"></div>
+                            <div class="border-bottom border-gray-300 mw-50 w-100"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-light-info fw-bolder w-100 mb-5" [disabled]="authForm.invalid">{{ isLoginMode ? 'Giriş Yap':'Kayıt Ol' }}</button>
+                        <button type="button" class="btn btn-light-success fw-bolder w-100 mb-5" (click)="onToggleMode()">{{ isLoginMode ? 'Üye Olmak İstiyorum': 'Üyeyim' }}</button>
+                        <!--end::Separator-->
+                    </form>
+                    <!--end::Form-->
+                    <app-loading *ngIf="loading"></app-loading>
+                   
+                </div>
+                <!--end::Wrapper-->
+            </div>
+            <!--end::Content-->
+
+            <!--begin::Footer-->
+            <div class="d-flex flex-center flex-column-auto p-20">
+                <div class="d-flex align-items-center fw-bold fs-6">
+                    <span class="text-muted text-hover-primary px-3">Library Application</span>
+                    <span class="text-muted text-hover-primary px-3">v@1.0.0</span>
+                    <span class="text-muted text-hover-primary px-3">© Ayşe OK</span>
+                </div>
+            </div>
+            <!--end::Footer-->
+
+        </div>
+        <!--end::Authentication - Sign-in-->
+    </div>
+</body>

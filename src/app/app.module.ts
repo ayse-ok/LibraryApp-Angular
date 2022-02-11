@@ -11,17 +11,16 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
 import {APP_BASE_HREF} from '@angular/common';
 import { SharedModule } from 'primeng/api';
-import { MainComponent } from './main/main.component';
-import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { AuthInterceptor } from '@auth/auth.interceptor';
+import { ErrorInterceptor } from '@shared/error.interceptor';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
-    AppComponent
-    
+    AppComponent    
   ],
   imports: [
     BrowserModule,
@@ -34,9 +33,12 @@ import { FormsModule } from '@angular/forms';
 
     AuthModule,
     MainModule,
-    TranslateModule.forRoot(), 
+    TranslateModule.forRoot(),
+   // SweetAlert2Module.forRoot()  
   ],
   providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     {provide: APP_BASE_HREF, useValue: '/library'},
     DatePipe
   ],

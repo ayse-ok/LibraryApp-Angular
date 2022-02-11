@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MainComponent } from './main.component';
+import { AuthGuard } from '@auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -42,8 +43,8 @@ const routes: Routes = [
     path: 'ziyaretciIslemleri',
     data: { title: 'Ziyaretçi İşlemler' },   
     loadChildren: () => import('../ziyaretci-islemler/ziyaretci-islemler.module').then((m) => m.ZiyaretciIslemlerModule), 
-  }
-
+  },
+  {path: 'cikis', redirectTo: '/logout' , pathMatch: 'full'},
 ];
 
 @NgModule({
