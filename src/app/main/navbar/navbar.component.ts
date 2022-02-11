@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
 
   profilMenuDoldur() {
     this.profilMenuItems.push({'label':'Profil', 'icon':'pi pi-user' , 'routerLink':'/profile'});
-    this.profilMenuItems.push({'label':'Çıkış', 'icon':'pi pi-sign-out' ,'routerLink':'/logout'});
+    this.profilMenuItems.push({'label':'Çıkış', 'icon':'pi pi-sign-out' ,'routerLink':'/auth'});
   }
 
   menuDoldur(){

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '@auth/auth.guard';
 import { MainComponent } from '../main/main.component';
 import { EnvanterComponent } from './envanter/envanter.component';
 import { KategoriComponent } from './kategori/kategori.component';
@@ -9,7 +10,7 @@ const routes: Routes = [
   {
     path: '',
     data: { title: 'Kütüphane' },
-    component: MainComponent,
+    component: MainComponent,    
     children: [
       {
         path: 'kitap',
