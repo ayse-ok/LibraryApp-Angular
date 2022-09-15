@@ -4,8 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-LibraryApp TEST : https://library-app-ad357.web.app/library
-LibraryApp LOCAL :
+LibraryApp VIEW ON FIREBASE SERVER : https://library-app-ad357.web.app/library
+
+LibraryApp RUN ON LOCAL SERVER :
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
